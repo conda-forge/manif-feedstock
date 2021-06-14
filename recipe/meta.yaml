@@ -1,5 +1,5 @@
 {% set name = "manif" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/artivis/manif/archive/{{ version }}.tar.gz
-    sha256: 5cbc0d5796bc08020e4d86ef42b9146317184822ff622f6c5d127beb43c688e6
+    sha256: f3fa37c64c60e708331df7e2c70a49c4b6e4f998fc352cd576b9ca79a8acdfed
 
 build:
   number: 0
