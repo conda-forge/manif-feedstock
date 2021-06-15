@@ -8,8 +8,6 @@ package:
 source:
   - url: https://github.com/artivis/manif/archive/{{ version }}.tar.gz
     sha256: f3fa37c64c60e708331df7e2c70a49c4b6e4f998fc352cd576b9ca79a8acdfed
-    patches:
-      - fix_cmake_version.patch
 
 build:
   number: 0
