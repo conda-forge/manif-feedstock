@@ -10,7 +10,7 @@ source:
     sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -21,19 +21,22 @@ requirements:
   host:
     - eigen
 
-
-test:
-  commands:
-    - test -f ${PREFIX}/include/manif/manif.h  # [not win]
-    - test -f ${PREFIX}/share/manif/cmake/manifConfig.cmake  # [not win]
-    - if exist %PREFIX%\\Library\\include\\manif\\manif.h (exit 0) else (exit 1)  # [win]
-    - if exist %PREFIX%\\Library\\share\\manif\\cmake\\manifConfig.cmake (exit 0) else (exit 1)  # [win]
+outputs:
+  - name: manif
+    script: build.sh  # [unix]
+    script: bld.bat  # [win]
+    test:
+      commands:
+        - test -f ${PREFIX}/include/manif/manif.h  # [not win]
+        - test -f ${PREFIX}/share/manif/cmake/manifConfig.cmake  # [not win]
+        - if exist %PREFIX%\\Library\\include\\manif\\manif.h (exit 0) else (exit 1)  # [win]
+        - if exist %PREFIX%\\Library\\share\\manif\\cmake\\manifConfig.cmake (exit 0) else (exit 1)  # [win] 
 
 about:
   home: https://github.com/artivis/manif
   license: MIT
   license_file: LICENSE
-  summary: A small C++11 header-only library for Lie theory.
+  summary: A small C++11 header-only library (with Python bindings) for Lie theory.
 
 extra:
   recipe-maintainers:
