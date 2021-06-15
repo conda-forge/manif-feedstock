@@ -23,8 +23,8 @@ requirements:
 
 outputs:
   - name: manif
-    script: build.sh  # [unix]
-    script: bld.bat  # [win]
+    script: build_cxx.sh  # [unix]
+    script: bld_cxx.bat  # [win]
     test:
       commands:
         - test -f ${PREFIX}/include/manif/manif.h  # [not win]
