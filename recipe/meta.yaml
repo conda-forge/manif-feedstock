@@ -21,6 +21,7 @@ requirements:
   host:
     - eigen
     - gtest
+    - gmock
 
 outputs:
   - name: manif
