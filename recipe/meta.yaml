@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/artivis/manif/archive/{{ version }}.tar.gz
-    sha256: f3fa37c64c60e708331df7e2c70a49c4b6e4f998fc352cd576b9ca79a8acdfed
+    sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
 
 build:
   number: 0
