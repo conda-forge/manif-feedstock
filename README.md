@@ -1,5 +1,5 @@
-About manif
-===========
+About manif-split
+=================
 
 Home: https://github.com/artivis/manif
 
@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/manif-feedstock/blob/master/LICENSE.txt)
 
-Summary: A small C++11 header-only library for Lie theory.
+Summary: A small C++11 header-only library (with Python bindings) for Lie theory.
 
 Current build status
 ====================
@@ -61,21 +61,22 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-manif-green.svg)](https://anaconda.org/conda-forge/manif) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/manif.svg)](https://anaconda.org/conda-forge/manif) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/manif.svg)](https://anaconda.org/conda-forge/manif) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/manif.svg)](https://anaconda.org/conda-forge/manif) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-manifpy-green.svg)](https://anaconda.org/conda-forge/manifpy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/manifpy.svg)](https://anaconda.org/conda-forge/manifpy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/manifpy.svg)](https://anaconda.org/conda-forge/manifpy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/manifpy.svg)](https://anaconda.org/conda-forge/manifpy) |
 
-Installing manif
-================
+Installing manif-split
+======================
 
-Installing `manif` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `manif-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `manif` can be installed with:
+Once the `conda-forge` channel has been enabled, `manif, manifpy` can be installed with:
 
 ```
-conda install manif
+conda install manif manifpy
 ```
 
 It is possible to list all of the versions of `manif` available on your platform with:
@@ -123,17 +124,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating manif-feedstock
-========================
+Updating manif-split-feedstock
+==============================
 
-If you would like to improve the manif recipe or build a new
+If you would like to improve the manif-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/manif-feedstock are
+Note that all branches in the conda-forge/manif-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
