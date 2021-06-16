@@ -43,7 +43,8 @@ outputs:
         - if not exist %PREFIX%\\Library\\share\\manif\\cmake\\manifConfig.cmake exit 1  # [win] 
 
   - name: manifpy
-    script: python -m pip install . -vv
+    script: build_py.sh  # [unix]
+    script: bld_py.bat  # [win]
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
