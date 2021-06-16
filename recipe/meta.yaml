@@ -20,7 +20,6 @@ requirements:
     - cmake
   host:
     - eigen
-    - gtest
 
 outputs:
   - name: manif
@@ -35,6 +34,7 @@ outputs:
       host:
         - eigen
         - gtest
+        - gmock
     test:
       commands:
         - test -f ${PREFIX}/include/manif/manif.h  # [not win]
