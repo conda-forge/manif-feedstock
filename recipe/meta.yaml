@@ -1,4 +1,4 @@
-{% set name = "manif" %}
+{% set name = "manif-split" %}
 {% set version = "0.0.4" %}
 
 package:
@@ -21,7 +21,6 @@ requirements:
   host:
     - eigen
     - gtest
-    - gmock
 
 outputs:
   - name: manif
@@ -31,8 +30,28 @@ outputs:
       commands:
         - test -f ${PREFIX}/include/manif/manif.h  # [not win]
         - test -f ${PREFIX}/share/manif/cmake/manifConfig.cmake  # [not win]
-        - if exist %PREFIX%\\Library\\include\\manif\\manif.h (exit 0) else (exit 1)  # [win]
-        - if exist %PREFIX%\\Library\\share\\manif\\cmake\\manifConfig.cmake (exit 0) else (exit 1)  # [win] 
+        - if not exist %PREFIX%\\Library\\include\\manif\\manif.h exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\share\\manif\\cmake\\manifConfig.cmake exit 1  # [win] 
+
+  - name: manifpy
+    script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - numpy                                  # [build_platform != target_platform]
+      host:
+        - python
+        - pip
+        - numpy
+        - pybind11
+        - pybind11-abi
+      run:
+        - python
+        - {{ pin_compatible('numpy') }}
+    test:
+      imports:
+        - manifpy
 
 about:
   home: https://github.com/artivis/manif
