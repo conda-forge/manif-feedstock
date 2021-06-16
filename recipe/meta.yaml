@@ -26,6 +26,15 @@ outputs:
   - name: manif
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - make                               # [not win]
+        - cmake
+      host:
+        - eigen
+        - gtest
     test:
       commands:
         - test -f ${PREFIX}/include/manif/manif.h  # [not win]
