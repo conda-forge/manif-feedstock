@@ -7,6 +7,7 @@ cmake ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DBUILD_TESTING=OFF ^
     -DBUILD_EXAMPLES=ON ^
+    -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 

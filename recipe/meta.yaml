@@ -10,7 +10,7 @@ source:
     sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: manif
@@ -24,6 +24,7 @@ outputs:
         - cmake
       host:
         - eigen
+        - tl-optional
         - gtest
         - gmock
     test:
@@ -49,6 +50,7 @@ outputs:
         - numpy                                  # [build_platform != target_platform]
       host:
         - eigen
+        - tl-optional
         - python
         - pip
         - numpy
