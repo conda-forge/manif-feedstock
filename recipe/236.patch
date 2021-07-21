@@ -1,0 +1,49 @@
+From 09ce487c82bc0d1e730d090a78ab8da89e2aece8 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio.traversaro@iit.it>
+Date: Wed, 21 Jul 2021 14:48:47 +0200
+Subject: [PATCH 1/2] Fix find_package(manif) if tl-optional_FOUND is TRUE
+
+---
+ CMakeLists.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e9ed4a38..13f8dbbc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -101,6 +101,13 @@ else(TARGET Eigen3::Eigen)
+   target_include_directories(${PROJECT_NAME} SYSTEM INTERFACE ${EIGEN3_INCLUDE_DIRS})
+ endif(TARGET Eigen3::Eigen)
+ 
++# Add tl-optional interface dependency if enabled
++if(tl-optional_FOUND)
++  set(tl-optional_DEPENDENCY "find_dependency(tl-optional)")
++else()
++  set(tl-optional_DEPENDENCY "")
++endif()
++
+ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+   target_compile_options(${PROJECT_NAME} INTERFACE -ftemplate-depth=512)
+ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+
+From 1a7abca49d36b342d83b8622c25ca129981910b4 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio.traversaro@iit.it>
+Date: Wed, 21 Jul 2021 14:49:26 +0200
+Subject: [PATCH 2/2] Update manifConfig.cmake.in
+
+---
+ cmake/manifConfig.cmake.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/cmake/manifConfig.cmake.in b/cmake/manifConfig.cmake.in
+index bbbc6987..863d5b57 100644
+--- a/cmake/manifConfig.cmake.in
++++ b/cmake/manifConfig.cmake.in
+@@ -2,6 +2,7 @@
+ 
+ include(CMakeFindDependencyMacro)
+ @Eigen3_DEPENDENCY@
++@tl-optional_DEPENDENCY@
+ 
+ if(NOT TARGET @PROJECT_NAME@)
+   include("${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@Targets.cmake")
