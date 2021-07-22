@@ -10,6 +10,7 @@ source:
     sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
     patches:
       - 236.patch
+      - disable_read_readme.md  # [win]
 
 build:
   number: 4
