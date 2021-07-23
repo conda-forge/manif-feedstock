@@ -18,7 +18,7 @@ index e9ed4a38..bf32f7bc 100644
  option(BUILD_TESTING_PYTHON "Build Python tests only." OFF)
  
  if (BUILD_PYTHON_BINDINGS)
-+  find_package(Python3 COMPONENTS Interpreter Development.Module NumPy REQUIRED)
++  find_package(Python3 COMPONENTS Interpreter Development NumPy REQUIRED)
    find_package(pybind11 REQUIRED)
    add_subdirectory(python)
  endif()
