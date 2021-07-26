@@ -54,7 +54,7 @@ index 6138dc84..7dbdc651 100644
 +else()
 +  execute_process(
 +    COMMAND
-+    ${Python_EXECUTABLE} -c
++    ${Python3_EXECUTABLE} -c
 +    "import distutils.sysconfig; print(distutils.sysconfig.get_python_lib(plat_specific=True, standard_lib=False, prefix=''))"
 +    OUTPUT_VARIABLE _PYTHON_INSTDIR)
 +  string(STRIP ${_PYTHON_INSTDIR} _PYTHON_INSTDIR_CLEAN)
