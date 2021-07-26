@@ -25,6 +25,7 @@ outputs:
         - {{ compiler('cxx') }}
         - make                               # [not win]
         - cmake
+        - clang  # [win]
       host:
         - eigen
         - tl-optional
