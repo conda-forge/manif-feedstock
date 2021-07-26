@@ -46,7 +46,7 @@ index 6138dc84..7dbdc651 100644
 +
 +# Installation in the active site-packages folder (could be a system folder)
 +if(DETECT_ACTIVE_PYTHON_SITEPACKAGES)
-+  set(PYTHON_INSTDIR "${Python_SITELIB}/manifpy")
++  set(PYTHON_INSTDIR "${Python3_SITELIB}/manifpy")
 +# Installation from the build extension of setup.py
 +elseif(CALL_FROM_SETUP_PY)
 +  set(PYTHON_INSTDIR "${CMAKE_INSTALL_PREFIX}")
