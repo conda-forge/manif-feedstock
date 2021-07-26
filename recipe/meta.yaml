@@ -10,9 +10,10 @@ source:
     sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
     patches:
       - 236.patch
+      - 233.patch  # [win]
 
 build:
-  number: 4
+  number: 5
 
 outputs:
   - name: manif
@@ -42,8 +43,6 @@ outputs:
   - name: manifpy
     script: build_py.sh  # [unix]
     script: bld_py.bat  # [win]
-    build:
-      skip: True  # [win]
     requirements:
       build:
         - {{ compiler('c') }}
@@ -53,6 +52,7 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
+        - clang  # [win]
       host:
         - eigen
         - tl-optional
