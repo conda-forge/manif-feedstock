@@ -1,7 +1,9 @@
 set "CC=clang-cl.exe"
 set "CXX=clang-cl.exe"
-set "CL=/MP"
 set
+
+mkdir build%CONDA_PY%
+cd build%CONDA_PY%
 
 :: Install the C++ related files in a random prefix so they are ignored,
 :: as they are already packaged by the manif packge in bld_cxx.bat
