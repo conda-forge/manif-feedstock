@@ -19,6 +19,7 @@ cmake ^
     -DPython3_LIBRARY:PATH=%PREFIX%\libs\python%CONDA_PY%.lib
     -DDETECT_ACTIVE_PYTHON_SITEPACKAGES:BOOL=ON ^
     %SRC_DIR%
+type CMakeCache.txt
 if errorlevel 1 exit 1
 
 :: Build.
