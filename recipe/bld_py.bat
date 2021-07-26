@@ -1,3 +1,6 @@
+set "CC=clang-cl.exe"
+set "CXX=clang-cl.exe"
+set "CL=/MP"
 set
 
 :: Install the C++ related files in a random prefix so they are ignored,
