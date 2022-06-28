@@ -9,8 +9,7 @@ cmake .. \
       -DCMAKE_INSTALL_LIBDIR=lib \
       -DBUILD_TESTING=OFF \
       -DBUILD_EXAMPLES=ON \
-      -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON \
-      -DCMAKE_CXX_STANDARD:STRING=17
+      -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON
 
 cmake --build . --config Release
 cmake --build . --config Release --target install
