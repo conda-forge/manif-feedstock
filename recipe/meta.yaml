@@ -11,6 +11,7 @@ source:
     patches:
       - 236.patch
       - 233.patch  # [win]
+      - 248.patch
 
 build:
   number: 8
