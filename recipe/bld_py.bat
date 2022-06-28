@@ -1,7 +1,3 @@
-set "CC=clang-cl.exe"
-set "CXX=clang-cl.exe"
-set
-
 mkdir build%CONDA_PY%
 cd build%CONDA_PY%
 
@@ -10,7 +6,7 @@ cd build%CONDA_PY%
 :: Python bindings are installed outside CMAKE_INSTALL_PREFIX via the 
 :: DETECT_ACTIVE_PYTHON_SITEPACKAGES option
 cmake ^
-    -G "NMake Makefiles" ^
+    -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX=.\install ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DBUILD_TESTING=OFF ^
