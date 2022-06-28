@@ -63,7 +63,7 @@ outputs:
         - pybind11-abi
       run:
         - python
-        - {{ pin_compatible('numpy') }}
+        - {{ pin_compatible('numpy', max_pin='x.x') }}
     test:
       imports:
         - manifpy
