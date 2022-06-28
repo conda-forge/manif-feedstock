@@ -24,7 +24,7 @@ outputs:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - make                               # [not win]
+        - ninja
         - cmake
       host:
         - eigen
