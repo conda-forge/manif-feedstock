@@ -13,7 +13,7 @@ source:
       - 233.patch  # [win]
 
 build:
-  number: 7
+  number: 8
 
 outputs:
   - name: manif
