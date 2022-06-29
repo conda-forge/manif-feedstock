@@ -1,0 +1,21 @@
+From 6e43be2e11295dca1ec0f00c8bfa52778414a00b Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio.traversaro@iit.it>
+Date: Tue, 28 Jun 2022 16:49:49 +0200
+Subject: [PATCH] Add missing include in impl/macro.h header
+
+---
+ include/manif/impl/macro.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/manif/impl/macro.h b/include/manif/impl/macro.h
+index 87f2913b..5d5fa8ff 100644
+--- a/include/manif/impl/macro.h
++++ b/include/manif/impl/macro.h
+@@ -2,6 +2,7 @@
+ #define _MANIF_MANIF_FWD_H_
+ 
+ #include <stdexcept> // for std::runtime_error
++#include <utility> // for std::forward
+ 
+ #ifdef NDEBUG
+ # ifndef MANIF_NO_DEBUG

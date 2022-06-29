@@ -17,8 +17,8 @@ docker_image:
 numpy:
 - '1.21'
 - '1.19'
-- '1.18'
-- '1.18'
+- '1.19'
+- '1.19'
 - '1.19'
 pin_run_as_build:
   python:

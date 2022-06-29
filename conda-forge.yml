@@ -3,9 +3,12 @@ azure:
     pool:
       vmImage: windows-2019
 conda_forge_output_validation: true
+build_platform:
+  linux_aarch64: linux_aarch64
+  linux_ppc64le: linux_ppc64le
 provider:
-  linux_aarch64: default
-  linux_ppc64le: default
+  linux_aarch64: azure
+  linux_ppc64le: azure
 github:
   branch_name: main
   tooling_branch_name: main
