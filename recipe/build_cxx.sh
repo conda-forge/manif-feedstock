@@ -1,12 +1,8 @@
 #!/bin/sh
 
 if [[ ${target_platform} == "linux-ppc64le" || ${target_platform} == "linux-aarch64" ]]; then
-  echo "Using 1 thread to build"
-  export NUM_PARALLEL=-j1
   export BUILD_EXAMPLES=OFF
 else
-  echo "Use all available cores to build"
-  export NUM_PARALLEL=
   export BUILD_EXAMPLES=ON
 fi
 
@@ -21,7 +17,7 @@ cmake -GNinja .. \
       -DBUILD_EXAMPLES=${BUILD_EXAMPLES} \
       -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON
 
-cmake --build . --config Release $NUM_PARALLEL
+cmake --build . --config Release
 cmake --build . --config Release --target install
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
