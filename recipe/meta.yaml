@@ -44,6 +44,8 @@ outputs:
   - name: manifpy
     script: build_py.sh  # [unix]
     script: bld_py.bat  # [win]
+    build:
+      skip: true  # [py==310 and win]
     requirements:
       build:
         - {{ compiler('c') }}
