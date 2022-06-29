@@ -2,9 +2,6 @@ set "CC=clang-cl.exe"
 set "CXX=clang-cl.exe"
 set
 
-# Remove llvm installed in the system to avoid cross-talking
-rmdir /S /Q "C:/Program Files/LLVM"
-
 mkdir build%CONDA_PY%
 cd build%CONDA_PY%
 
