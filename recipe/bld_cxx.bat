@@ -1,3 +1,6 @@
+# Remove llvm installed in the system to avoid cross-talking
+rmdir /S /Q "C:/Program Files/LLVM"
+
 mkdir build
 cd build
 
