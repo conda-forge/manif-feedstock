@@ -55,6 +55,7 @@ outputs:
         - numpy                                  # [build_platform != target_platform]
         - clang  # [win]
         - lld  # [win]
+        - llvm-tools  # [win]
       host:
         - eigen
         - tl-optional
