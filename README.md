@@ -1,11 +1,11 @@
-About manif-split
-=================
+About manif-split-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/manif-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/artivis/manif
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/manif-feedstock/blob/main/LICENSE.txt)
 
 Summary: A small C++11 header-only library (with Python bindings) for Lie theory.
 
@@ -52,6 +52,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12133&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/manif-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12133&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/manif-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
