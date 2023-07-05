@@ -14,7 +14,7 @@ source:
       - 248.patch
 
 build:
-  number: 14
+  number: 15
 
 outputs:
   - name: manif
@@ -22,9 +22,6 @@ outputs:
     script: bld_cxx.bat  # [win]
     requirements:
       build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-        - pybind11                               # [build_platform != target_platform]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - ninja
