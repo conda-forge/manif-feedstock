@@ -14,7 +14,7 @@ source:
       - 248.patch
 
 build:
-  number: 16
+  number: 17
 
 outputs:
   - name: manif
@@ -60,11 +60,12 @@ outputs:
         - tl-optional
         - python
         - pip
-        - pybind11
+        # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
+        - pybind11 <2.12.0
         - pybind11-abi
+        - numpy
       run:
         - python
-        - numpy
     test:
       imports:
         - manifpy
