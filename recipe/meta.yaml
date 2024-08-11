@@ -8,10 +8,6 @@ package:
 source:
   - url: https://github.com/artivis/manif/archive/{{ version }}.tar.gz
     sha256: 246a781c54a5c57179d48096faca0d108944e120f69d8fd7fb69e3cb4a0a67fb
-    patches:
-      - 236.patch
-      - 233.patch  # [win]
-      - 248.patch
 
 build:
   number: 0
