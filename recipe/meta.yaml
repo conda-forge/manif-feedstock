@@ -1,5 +1,5 @@
 {% set name = "manif-split" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name }}
@@ -7,14 +7,14 @@ package:
 
 source:
   - url: https://github.com/artivis/manif/archive/{{ version }}.tar.gz
-    sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
+    sha256: 246a781c54a5c57179d48096faca0d108944e120f69d8fd7fb69e3cb4a0a67fb
     patches:
       - 236.patch
       - 233.patch  # [win]
       - 248.patch
 
 build:
-  number: 17
+  number: 0
 
 outputs:
   - name: manif
