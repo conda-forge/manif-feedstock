@@ -12,7 +12,7 @@ cmake ^
 if errorlevel 1 exit 1
 
 :: Build.
-cmake --build . --config Release --parallel 3
+cmake --build . --config Release --parallel 2
 if errorlevel 1 exit 1
 
 :: Install.
