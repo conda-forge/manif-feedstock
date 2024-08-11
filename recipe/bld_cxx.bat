@@ -5,14 +5,14 @@ cmake ^
     -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
-    -DBUILD_TESTING=ON ^
+    -DBUILD_TESTING=OFF ^
     -DBUILD_EXAMPLES=ON ^
     -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
 :: Build.
-cmake --build . --config Release --parallel 1
+cmake --build . --config Release
 if errorlevel 1 exit 1
 
 :: Install.
