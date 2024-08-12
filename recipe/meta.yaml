@@ -1,5 +1,5 @@
 {% set name = "manif-split" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name }}
@@ -7,14 +7,12 @@ package:
 
 source:
   - url: https://github.com/artivis/manif/archive/{{ version }}.tar.gz
-    sha256: 739731e1eb83194c4977fa946ee63ba1aa8aadf757d67f3b183f2dfab64eff81
+    sha256: 246a781c54a5c57179d48096faca0d108944e120f69d8fd7fb69e3cb4a0a67fb
     patches:
-      - 236.patch
-      - 233.patch  # [win]
-      - 248.patch
+      - 305.patch
 
 build:
-  number: 17
+  number: 0
 
 outputs:
   - name: manif
@@ -54,6 +52,7 @@ outputs:
         - cmake
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - cmake-build-extension                  # [build_platform != target_platform]
         - clang 13  # [win]
         - lld 13  # [win]
         - llvm-tools 13  # [win]
@@ -62,6 +61,7 @@ outputs:
         - tl-optional
         - python
         - pip
+        - cmake-build-extension
         # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
         - pybind11 <2.12.0
         - pybind11-abi
