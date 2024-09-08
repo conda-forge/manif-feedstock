@@ -12,7 +12,7 @@ source:
       - 305.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: manif
@@ -61,6 +61,8 @@ outputs:
         - tl-optional
         - python
         - pip
+        - wheel
+        - setuptools
         - cmake-build-extension
         # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
         - pybind11 <2.12.0
