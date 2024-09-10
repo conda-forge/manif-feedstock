@@ -12,12 +12,19 @@ source:
       - 305.patch
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: manif
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
+    build:
+      # gtest and gmock are used for tests
+      # manif also has a gtest helper public header, but anyhow
+      # if downstream users want to use it, they can just install gtest
+      ignore_run_exports_from:
+        - gtest
+        - gmock
     requirements:
       build:
         - {{ compiler('c') }}
@@ -33,6 +40,8 @@ outputs:
       run:
         - eigen
         - tl-optional
+      run_constrained:
+        - manifpy {{ version }}
     test:
       commands:
         - test -f ${PREFIX}/include/manif/manif.h  # [not win]
@@ -70,6 +79,8 @@ outputs:
         - numpy
       run:
         - python
+      run_constrained:
+        - manif {{ version }}
     test:
       imports:
         - manifpy
