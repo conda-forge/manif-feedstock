@@ -41,7 +41,7 @@ outputs:
         - eigen
         - tl-optional
       run_constrained:
-        - manif {{ version }}
+        - manifpy {{ version }}
     test:
       commands:
         - test -f ${PREFIX}/include/manif/manif.h  # [not win]
