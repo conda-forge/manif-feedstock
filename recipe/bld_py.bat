@@ -1,3 +1,6 @@
+set "CC=clang-cl.exe"
+set "CXX=clang-cl.exe"
+
 mkdir build%CONDA_PY%
 cd build%CONDA_PY%
 
