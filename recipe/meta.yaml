@@ -70,6 +70,7 @@ outputs:
         - wheel
         - setuptools
         - cmake-build-extension
+        - pybind11
         - pybind11-abi
         - numpy
       run:
