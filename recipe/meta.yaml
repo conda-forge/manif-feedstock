@@ -12,7 +12,7 @@ source:
       - 305.patch
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   - name: manif
@@ -34,6 +34,7 @@ outputs:
         - cmake
       host:
         - eigen
+        - eigen-abi-devel
         - tl-optional
         - gtest
         - gmock
@@ -64,6 +65,7 @@ outputs:
         - cmake-build-extension                  # [build_platform != target_platform]
       host:
         - eigen
+        - eigen-abi-devel
         - tl-optional
         - python
         - pip
