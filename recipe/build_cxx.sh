@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ ${target_platform} == "linux-ppc64le" || ${target_platform} == "linux-aarch64" ]]; then
+if [[ ${target_platform} == "linux-ppc64le" ]]; then
   export BUILD_EXAMPLES=OFF
 else
   export BUILD_EXAMPLES=ON
@@ -15,6 +15,7 @@ cmake -GNinja .. \
       -DCMAKE_INSTALL_LIBDIR=lib \
       -DBUILD_TESTING=OFF \
       -DBUILD_EXAMPLES=${BUILD_EXAMPLES} \
+      -DCMAKE_REQUIRE_FIND_PACKAGE_Eigen3=ON \
       -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON
 
 cmake --build . --config Release
