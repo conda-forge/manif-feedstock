@@ -1,0 +1,61 @@
+From a11b6d04b737dd1391b7add304ac288304418ac6 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Sun, 26 Apr 2026 17:37:01 +0200
+Subject: [PATCH] Remove werror
+
+---
+ benchmark/CMakeLists.txt | 2 --
+ examples/CMakeLists.txt  | 7 -------
+ test/CMakeLists.txt      | 8 --------
+ 3 files changed, 17 deletions(-)
+
+diff --git a/benchmark/CMakeLists.txt b/benchmark/CMakeLists.txt
+index 2c6f95db..22a4fd14 100644
+--- a/benchmark/CMakeLists.txt
++++ b/benchmark/CMakeLists.txt
+@@ -21,8 +21,6 @@ function(manif_add_benchmark target)
+   if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+     # GCC is not strict enough by default, so enable most of the warnings.
+     target_compile_options(${target} PRIVATE
+-      -Werror=all
+-      -Werror=extra
+       # When the library is built using GCC it is necessary to link
+       # with the pthread library due to how GCC implements std::thread.
+       # See https://github.com/google/benchmark#platform-specific-build-instructions
+diff --git a/examples/CMakeLists.txt b/examples/CMakeLists.txt
+index abcff5a9..609aebac 100644
+--- a/examples/CMakeLists.txt
++++ b/examples/CMakeLists.txt
+@@ -52,13 +52,6 @@ endif()
+ foreach(target ${CXX_11_EXAMPLE_TARGETS})
+   target_link_libraries(${target} ${PROJECT_NAME})
+ 
+-  if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+-    # GCC is not strict enough by default, so enable most of the warnings.
+-    target_compile_options(${target} PRIVATE
+-      -Werror=all
+-      -Werror=extra
+-    )
+-  endif()
+ 
+ endforeach()
+ 
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 2af25ea2..00cc843e 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -36,14 +36,6 @@ function(manif_add_gtest target)
+   add_executable(${target} ${ARGN})
+   target_link_libraries(${target} ${PROJECT_NAME} GTest::gtest)
+ 
+-  if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+-    # GCC is not strict enough by default, so enable most of the warnings.
+-    target_compile_options(${target} PRIVATE
+-      -Werror=all
+-      -Werror=extra
+-      )
+-  endif()
+-
+   add_test(NAME ${target} COMMAND ${target})
+ endfunction()
+ 
