@@ -8,6 +8,7 @@ cmake ^
     -DBUILD_TESTING=OFF ^
     -DBUILD_EXAMPLES=ON ^
     -DUSE_SYSTEM_WIDE_TL_OPTIONAL=ON ^
+    -DCMAKE_REQUIRE_FIND_PACKAGE_Eigen3=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
