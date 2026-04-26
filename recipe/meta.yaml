@@ -12,6 +12,7 @@ source:
       - 305.patch
       - 320.patch
       - 335.patch
+      - remove_werror.patch
 
 build:
   number: 7
